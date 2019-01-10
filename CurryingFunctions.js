@@ -1,7 +1,7 @@
 //currying function
 //static function
 //addSubtract(1)(2)(3)(4)(5)(6) -> 1 + 2 - 3 + 4 - 5 + 6 -> 5 etc.
-/*
+
 function curry(fn) {
     return (b) => {
       return (c) =>{
@@ -26,7 +26,6 @@ console.log(plusminus(1)(2)(3)(4)(5)(6));
 
 
 //dnyamic currying
-
 const addSubtract = (n) => {
     let cur = n
     let mul = 1
