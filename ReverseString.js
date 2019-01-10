@@ -7,25 +7,7 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 
-
-//turn str into array
-//call revese
-//join the array back into a string
-//return result
-
-//reverse string using split and reduce.
-function reverse(str) {
-   return str.split('').reduce((reversed, character) => {
-        return    character + reversed;
-    }, ''); //value passed to reverse
-}
-
-
-
-module.exports = reverse;
-
-/*
-//first possible solution using reverse method
+//solution using simple reverse method
 function reverse(str) {
 return str.split('')
           .reverse()
@@ -33,7 +15,7 @@ return str.split('')
 }
 
 
-//using new for loop to reverse
+//using of loop to reverse
 function reverse(str) {
     let reversed = '';
 
@@ -52,12 +34,10 @@ function reverse(str) {
 }
 
 
-
-//reverse string using split and reduce.
+//reverse string using split and reduce but better syntax
 function reverse(str) {
    return str.split('').reduce((reversed, character) =>
       character + reversed, ''); //value passed to reverse
 }
-as an edit you can remove the return, brackets, 
+//as an edit you can remove the return, brackets, 
 
-*/
