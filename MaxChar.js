@@ -5,7 +5,6 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-
 // using a empty object we create a map of all values in the string
 // from here we parse through all the elements of the string.
 // if the charMap[character] is true then we add a value to it
@@ -27,12 +26,12 @@ function maxChar(str) {
 
     for (let char in charMap)
     {
-        if(charMapp[char] > max) {
+        if(charMap[char] > max) {
             max = charMap[char];
-            maxChar = char;
+            maxchar = char;
     }
   }
-  return maxChar;
+  return maxchar;
 }
 
-module.exports = maxChar;
+
