@@ -35,3 +35,15 @@ return sum;
 
 console.log(returnNumberSum(longNumber));
  }
+ 
+ 
+//recursive digitsum 
+ function sumDigits(number) {
+    var remainder = number % 10;
+    var sum = remainder;
+    if(number >= 10) {
+        var rest = Math.floor(number / 10);
+        sum += sumDigits(rest); 
+    }
+    return sum;
+}
