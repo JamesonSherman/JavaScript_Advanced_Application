@@ -1,6 +1,6 @@
 
-const port = 3030;  //const port don't fuck with this unless you have a designated port design focused on port 3030
-const EventEmitter = require('events');  // my emitter name pulled from emitters docs.
+const port = 3030;  
+const EventEmitter = require('events');  
 class MyEmitter extends EventEmitter {}
 const myEmitter = new MyEmitter();
 //--------------------------------------------------
@@ -166,7 +166,6 @@ myEmitter.emit('IhateEmitter');
 
 
 //IhateEmitter -  this is our sorting emitter. this pushes data to all continents according to json type casting. 
-//For fucks sake do NOT lazy cast these with two equals because type coercion is a pure BITCH.
 myEmitter.on('IhateEmitter', () =>{
 test.forEach(element => {
     if(element.continent === 'Asia'){
