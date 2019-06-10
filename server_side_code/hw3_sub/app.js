@@ -1,5 +1,5 @@
 
-const port = 3030;  //const port don't fuck with this unless you have a designated port design focused on port 3030
+const port = 3030;  
 const EventEmitter = require('events');  // my emitter name pulled from emitters docs.
 class MyEmitter extends EventEmitter {}
 const myEmitter = new MyEmitter();
@@ -44,7 +44,7 @@ let Antarctica = [];
 let Europe = [];
 let Oceania = [];
 let NULLCONT = []; // who knew there was a null continent?
-let test = []; // not actually a test array. this is the whole array that gathers all deep copied objeccts fromy my template.
+let test = []; // not actually a test array. this is the whole array that gathers all deep copied objects fromy my template.
 //---------------------------------------------------
 //creates a server with 200 header and end's okay.
 let app = http.createServer((req,res) =>{
@@ -53,7 +53,7 @@ let app = http.createServer((req,res) =>{
 });
 
 //-------------------------------------------
-//all of these are immeiately invoked https.get statments. we emit a secondary async event at the end of the 'close' cycle. this pops these emitters into the
+//all of these are immediately invoked https.get statments. we emit a secondary async event at the end of the 'close' cycle. this pops these emitters into the
 //event loop in JVE
         https.get(`https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-continent.json`,
         (res) =>{
@@ -135,8 +135,8 @@ myEmitter.on('CBCAP', () => {
 
 //-------------------------------------------------------
 //these are my big boy heavy duty emitters
-//killself_notreallyjustconcatenatethisgarbage - uses deep copy of my obj template to create new instance new objects whose __proto__ is not linked to obj.
-myEmitter.on('killself_notreallyjustconcatenatethisgarbage', ()=> {
+//justconcatenatethisgarbage - uses deep copy of my obj template to create new instance new objects whose __proto__ is not linked to obj.
+myEmitter.on('justconcatenatethisgarbage', ()=> {
 
 let i = 0;
 let j = 0;
@@ -166,7 +166,7 @@ myEmitter.emit('IhateEmitter');
 
 
 //IhateEmitter -  this is our sorting emitter. this pushes data to all continents according to json type casting. 
-//For fucks sake do NOT lazy cast these with two equals because type coercion is a pure BITCH.
+//For gods sake do NOT lazy cast these with two equals because type coercion is the devil.
 myEmitter.on('IhateEmitter', () =>{
 test.forEach(element => {
     if(element.continent === 'Asia'){
@@ -273,7 +273,7 @@ fs.writeFile("Oceania.json", oceaniastring, function(err) {
 
 });
 
-myEmitter.on('Literally_Fucking_Null_Continent', () => {
+myEmitter.on('Literally_Null_Continent', () => {
 let nullstring = JSON.stringify(NULLCONT);
 fs.writeFile("NULLCONT.json", nullstring, function(err) {
     if(err) {
@@ -294,7 +294,7 @@ let countryEmitter = () => {
     myEmitter.emit('Antarctica');
     myEmitter.emit('EU');
     myEmitter.emit('SEA');
-    myEmitter.emit('Literally_Fucking_Null_Continent');
+    myEmitter.emit('Literally_Null_Continent');
 }
 //this is kind of a special emitter call. the setTimeout pushes all JVE async events forwards and leaves the set timeout to be the final one to finish.
 //this is HEAVILY dependent upon the intial https.get requests going hard and doing their jobs.
