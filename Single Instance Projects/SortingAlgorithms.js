@@ -11,13 +11,6 @@ small guide to understand the problem
 5. how do i label the parts.
 */
 
-/*
----Module 1: 
-character Counting
-//problem:
-//Write a function that will store a strings values by amount in an object
-*/
-
 function charCount(str) {
     var obj = {};  //declare an empty object
     for (var char of str){  //loop through characters of a string
@@ -29,9 +22,7 @@ function charCount(str) {
     }
     return obj;
 }
-//tip: we use the regular expression /[a-z0-9]/.test(char) to determine if its a char
-// this version is o(n); because we have to iterate through all str elements.
-//a bit more compact version using reduce.
+
 
 /* here is a smaller more compact one that uses .split("") to make the string into an array
 after that we use .reduce and pass an object identifier to make the return into an object.
@@ -48,12 +39,6 @@ function count(string) {
 
 
 /* 
-----Module 2:
-frequency counters
-one of the easier methods of sorting and looking at data is via frequency counters.
-a frequency counter means creating an object or array that holds data and gives you metadata on the data inside
-sample problem:
-
 write a function called same, it accepts 2 arrays. the function should return true if every value in the
 array has its correspoing value squared in the second array. the frequency of values must be the same.
 
@@ -90,9 +75,3 @@ newobject[val] = (newobject[val] || 0) +1;
 }
 return newobject;
 }
-
-/*
-hint: use single responsibility principal to make your code less buggy!
-this means that by making the functions in your code only do 1 thing at a time. you can easily debug your code
-keymap in our case is part of that. it sets new keys for our object!
-*/
