@@ -161,13 +161,13 @@ j++;
 });
 
 //calls a secondary async emitter inside
-myEmitter.emit('IhateEmitter');
+myEmitter.emit('second_Emission');
 });
 
 
 //IhateEmitter -  this is our sorting emitter. this pushes data to all continents according to json type casting. 
 //For gods sake do NOT lazy cast these with two equals because type coercion is the devil.
-myEmitter.on('IhateEmitter', () =>{
+myEmitter.on('second_Emission', () =>{
 test.forEach(element => {
     if(element.continent === 'Asia'){
         Asia.push(element);
@@ -299,7 +299,7 @@ let countryEmitter = () => {
 //this is kind of a special emitter call. the setTimeout pushes all JVE async events forwards and leaves the set timeout to be the final one to finish.
 //this is HEAVILY dependent upon the intial https.get requests going hard and doing their jobs.
 setTimeout( () => {
-    myEmitter.emit('killself_notreallyjustconcatenatethisgarbage');
+    myEmitter.emit('justconcatenatethisgarbage');
 },1000);
 //listening on port 3030 local host call.
 app.listen(port, '127.0.0.1');
